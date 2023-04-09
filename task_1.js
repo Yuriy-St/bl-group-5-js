@@ -7,7 +7,7 @@
 
 const res = prompt("Яке офіційне ім'я JavaScript?");
 
-if (res === "ECMAScript") {
+if (res.toLowerCase() === "ECMAScript".toLowerCase()) {
   alert("Вірно");
 } else {
   alert("Не знаєте? ECMAScript!");
