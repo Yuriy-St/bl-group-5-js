@@ -4,3 +4,11 @@
 //Якщо користувач вводить "ECMAScript",
 //то показати через сповіщення: "Вірно!"
 //у протилежному випадку показати:"Не знаєте? ECMAScript!"
+
+const res = prompt("Яке офіційне ім'я JavaScript?");
+
+if (res === "ECMAScript") {
+  alert("Вірно");
+} else {
+  alert("Не знаєте? ECMAScript!");
+}
