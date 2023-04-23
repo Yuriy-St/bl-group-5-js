@@ -8,3 +8,12 @@ const favouriteMovies = [
     { director: 'Quentin Tarantino', name: 'Inglorious Basterds' },
     { director: 'Martin Scorsese', name: 'Silence' }
 ];
+console.log(favouriteMovies);
+const movies = {};
+
+for (const movie of favouriteMovies) {
+    if (!movies[movie.director]) movies[movie.director] = [];
+    movies[movie.director].push(movie.name);
+}
+
+console.log(movies);
