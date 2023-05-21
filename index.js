@@ -52,6 +52,25 @@ buttonEl3.addEventListener(`click`, () => {
 Завдання 4
 Кнопка "Зменшити" робить квадрат менше на 10 пікселів, допопка "Збільшити" - більше на 10 пікселів.
 */
+const buttonElDecr4 = document.querySelector(`#decrease`);
+const buttonElIncr4 = document.querySelector(`#increase`);
+const boxEl = document.querySelector(`#box`);
+
+buttonElDecr4.addEventListener("click", () => {
+  const currentWidth = boxEl.offsetWidth;
+  const currentHeight = boxEl.offsetHeight;
+
+  boxEl.style.width = `${currentWidth - 10}px`;
+  boxEl.style.height = `${currentHeight - 10}px`;
+});
+
+buttonElIncr4.addEventListener("click", () => {
+  const currentWidth = boxEl.offsetWidth;
+  const currentHeight = boxEl.offsetHeight;
+
+  boxEl.style.width = `${currentWidth + 10}px`;
+  boxEl.style.height = `${currentHeight + 10}px`;
+});
 
 //TODO:==============================================
 /*
@@ -60,6 +79,16 @@ buttonEl3.addEventListener(`click`, () => {
 всередині елемента з id "place" і коли клік припадає поза зоною елемента
 https://developer.mozilla.org/en-US/docs/Web/API/Node/contains
 */
+
+const divEl = document.querySelector("#place");
+
+document.body.addEventListener("click", (evt) => {
+  if (evt.target === divEl) {
+    console.log("Натиснули на дів!");
+  } else {
+    console.log("Не дів!");
+  }
+});
 
 //TODO:==============================================
 /*
