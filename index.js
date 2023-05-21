@@ -132,6 +132,20 @@ https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageY
 Завдання 11
 Наведено список персонажів. Зробіть фільтр на ім'я/прізвище.
 */
+const inputFilterEl = document.querySelector('.contactsFilter');
+const contactsListEl = document.querySelectorAll('.contact');
+inputFilterEl.addEventListener('input', e => {
+  console.log('Event triggered')
+  const filter = inputFilterEl.value.toLowerCase();
+  contactsListEl.forEach(contact => {
+    const name = contact.textContent.toLowerCase();
+    if (!name.includes(filter)) {
+      contact.style.display = 'none';
+    } else {
+      contact.style.display = 'block';
+    }
+  })
+})
 
 //TODO:==============================================
 /*
@@ -141,9 +155,21 @@ https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageY
 Якщо одне з полів порожнє, викликай alert із проханням заповнити їх.
 */
 
-//TODO:==============================================
+// TODO:==============================================
 /*
 Завдання 13
 Коло має зникати при наведенні на нього.
 При цьому позиція сусідніх кіл має залишатися незмінною.
 */
+const gridEl = document.querySelectorAll('.grid');
+const gridItemsEl = document.querySelectorAll('.gridItem');
+
+gridItemsEl.forEach(item => {
+  item.addEventListener('mouseover', () => {
+    item.style.opacity = '0';
+  });
+
+  item.addEventListener('mouseout', () => {
+    item.style.opacity = '1';
+  })
+})
