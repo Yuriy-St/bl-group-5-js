@@ -4,12 +4,27 @@
 Натискання на кнопку "SHOW ME" має виводити значення з поля введення (дивіться на елементи в html-розмітці)
 */
 
+const buttonEl1 = document.querySelector(`#alertButton`);
+const inputEl1 = document.querySelector(`#alertInput`);
+
+buttonEl1.addEventListener(`click`, () => alert(inputEl1.value));
+
 //TODO:==============================================
 /*
 Завдання 2
 Після натискання кнопки "SWAP ME" здійснюється обмін вмістом між двома інпутами.
 Ви можете натиснути на неї кілька разів або вручну змінити вміст інпутів.
 */
+
+const buttonEl2 = document.querySelector(`#swapButton`);
+const leftInput = document.querySelector(`#leftSwapInput`);
+const rightInput = document.querySelector(`#rightSwapInput`);
+
+buttonEl2.addEventListener(`click`, () => {
+  let inputLeftText = leftInput.value;
+  leftInput.value = rightInput.value;
+  rightInput.value = inputLeftText;
+});
 
 //TODO:==============================================
 /*
@@ -18,6 +33,19 @@
 "Розкрити", при повторному натисканні текст знову стає доступним
 і кнопка набуває початкового вигляду.
 */
+
+const buttonEl3 = document.querySelector(`#passwordButton`);
+const inputEl3 = document.querySelector(`#passwordInput`);
+
+buttonEl3.addEventListener(`click`, () => {
+  if (buttonEl3.textContent === "Hide") {
+    inputEl3.setAttribute(`type`, `password`);
+    buttonEl3.textContent = "Show";
+  } else {
+    inputEl3.setAttribute(`type`, `text`);
+    buttonEl3.textContent = "Hide";
+  }
+});
 
 //TODO:==============================================
 /*
